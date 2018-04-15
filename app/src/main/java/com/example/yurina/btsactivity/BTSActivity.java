@@ -2,6 +2,7 @@ package com.example.yurina.btsactivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,6 @@ public class BTSActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Bts> arrayList;
     private Bts bts;
-    private Myadapter myadapter;
 
 
     @Override
@@ -37,7 +37,7 @@ public class BTSActivity extends AppCompatActivity {
         recyclerView.setAdapter(new Myadapter(arrayList, this));
     }
 
-    public void Btsmember(){
+    public void Btsmember() {
 
         bts = new Bts();
 
@@ -123,7 +123,9 @@ public class BTSActivity extends AppCompatActivity {
                 "*좋아하는 과목: 체육\n" +
                 "*싫어하는 과목: 화학");
 
-        arrayList.add(bts);   bts = new Bts();
+        arrayList.add(bts);
+
+        bts = new Bts();
 
         bts.setImage("http://www.topstarnews.net/news/photo/first/201605/img_194251_1_org.jpg");
         bts.setName("지민");
@@ -166,14 +168,14 @@ public class BTSActivity extends AppCompatActivity {
 
         arrayList.add(bts);
 
-        arrayList.add(bts);   bts = new Bts();
+        bts = new Bts();
 
-        bts.setImage("");
+        bts.setImage("http://pds.joins.com//news/component/htmlphoto_mmdata/201712/18/c4dbcca2-fc45-4f8b-ac19-f490a6121206.jpg");
         bts.setName("정국");
         bts.setTruename("전정국");
         bts.setAge(22);
-        bts.setImage2("");
-        bts.setImage3("");
+        bts.setImage2("http://cfile3.uf.tistory.com/image/99BC2F33599A409B0E5058");
+        bts.setImage3("http://img.insight.co.kr/static/2018/02/08/700/18hhkkl7985qpqpvur5z.jpg");
         bts.setFeature("*본명: 전정국 / Jeon Jung Kook / 田 柾 國 (밭 전, 나무 바를 정, 나라 국)\n" +
                 "*활동명: 정국 / Jung Kook\n" +
                 "*생년월일: 1997년 9월 1일\n" +
@@ -205,14 +207,14 @@ public class BTSActivity extends AppCompatActivity {
 
         arrayList.add(bts);
 
-        arrayList.add(bts);   bts = new Bts();
+        bts = new Bts();
 
-        bts.setImage("");
+        bts.setImage("https://i.pinimg.com/originals/84/dd/29/84dd294edabbaef14d1fb831e42f973c.jpg");
         bts.setName("랩몬스터");
         bts.setTruename("김남준");
         bts.setAge(25);
-        bts.setImage2("");
-        bts.setImage3("");
+        bts.setImage2("http://www.newsculture.tv/imgdata/newsculture_tv/201701/2017011123158512.jpg");
+        bts.setImage3("http://pm1.narvii.com/6312/cedcf723357954a1be8356dd871c843bb6c1f029_00.jpg");
         bts.setFeature("*본명: 김남준 / Kim Nam Joon / 金 南 俊 (성 김, 남녘 남, 준걸 준)\n" +
                 "*활동명: 랩몬스터 / Rap Monster\n" +
                 "*생년월일: 1994년 9월 12일\n" +
@@ -248,14 +250,14 @@ public class BTSActivity extends AppCompatActivity {
 
         arrayList.add(bts);
 
-        arrayList.add(bts);   bts = new Bts();
+        bts = new Bts();
 
-        bts.setImage("");
+        bts.setImage("https://www.wowkeren.com/images/news/00168911.jpg");
         bts.setName("슈가");
         bts.setTruename("민윤기");
         bts.setAge(26);
-        bts.setImage2("");
-        bts.setImage3("");
+        bts.setImage2("http://mblogthumb1.phinf.naver.net/MjAxNjExMDNfMTgg/MDAxNDc4MTYyMzk2ODMw.P7CA4hEDGAMiHeobPeu64Xs6UJijhdSGJElTz1ySlu0g.kd3Vo8Af_Bh9YCtqWTjiRpwh9cD20UlL33IxIVRyBEsg.JPEG.doosan3314/%EB%B0%A9%ED%83%84%EC%86%8C%EB%85%84%EB%8B%A8_%EC%8A%88%EA%B0%8014.jpg?type=w800");
+        bts.setImage3("https://i.pinimg.com/originals/98/a9/73/98a973b6ffb32dd48b4c482ecf532e73.jpg");
         bts.setFeature("*본명: 민윤기 / Min Yoon Gi / 閔 玧 其 (위문할 민, 귀막이구슬 윤, 그 기)\n" +
                 "*활동명: 슈가 / SUGA\n" +
                 "*생년월일: 1993년 3월 9일\n" +
@@ -292,14 +294,14 @@ public class BTSActivity extends AppCompatActivity {
 
         arrayList.add(bts);
 
-        arrayList.add(bts);   bts = new Bts();
+        bts = new Bts();
 
-        bts.setImage("");
+        bts.setImage("http://cfile220.uf.daum.net/image/2344C73653AFF61B160FEB");
         bts.setName("제이홉");
         bts.setTruename("정호석");
         bts.setAge(25);
-        bts.setImage2("");
-        bts.setImage3("");
+        bts.setImage2("http://thumbnail.egloos.net/600x0/http://pds27.egloos.com/pds/201501/10/63/b0235063_54b137be5ceda.jpg");
+        bts.setImage3("http://www.enewstoday.co.kr/news/photo/201707/1083243_242956_247.jpg");
         bts.setFeature("*본명: 정호석 / Jung Ho Seok / 鄭 號 錫 (나라 이름 정, 부르짖을 호, 주석 석)\n" +
                 "*활동명: 제이홉 / J-Hope\n" +
                 "*생년월일: 1994년 2월 18일\n" +
@@ -336,16 +338,14 @@ public class BTSActivity extends AppCompatActivity {
         arrayList.add(bts);
 
 
-
-
     }
 
-     public class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder>{
-        private ArrayList<Bts> arrayList;
-        private Context context;
-        private LayoutInflater inflater;
+    public class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
+        ArrayList<Bts> arrayList;
+        Context context;
+        LayoutInflater inflater;
 
-        public Myadapter(ArrayList<Bts> arrayList, Context context){
+        public Myadapter(ArrayList<Bts> arrayList, Context context) {
             this.arrayList = arrayList;
             this.context = context;
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -355,14 +355,14 @@ public class BTSActivity extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-            View view = inflater.from(parent.getContext()).inflate(R.layout.item, parent,false);
+            View view = inflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
             return new ViewHolder(view);
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
 
-            Glide.with(context).load(arrayList.get(position).getImage()).into((ImageView) holder.itemView);
+            Glide.with(context).load((arrayList.get(position).getImage())).centerCrop().into(holder.image);
 
             holder.name.setText(arrayList.get(position).getName());
             holder.truename.setText(arrayList.get(position).getTruename());
@@ -373,8 +373,8 @@ public class BTSActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(context, Bts2Activity.class);
 
-                    intent.putExtra("image2",arrayList.get(position).getImage2());
-                    intent.putExtra("image3",arrayList.get(position).getImage3());
+                    intent.putExtra("image2", arrayList.get(position).getImage2());
+                    intent.putExtra("image3", arrayList.get(position).getImage3());
                     intent.putExtra("feature", arrayList.get(position).getFeature());
 
                     context.startActivity(intent);
@@ -397,9 +397,9 @@ public class BTSActivity extends AppCompatActivity {
             private TextView truename;
             private TextView age;
             private TextView button;
-            private ImageView image2;
-            private ImageView image3;
-            private TextView feture;
+//            private ImageView image2;
+//            private ImageView image3;
+//            private TextView feature;
 
             public ViewHolder(View itemView) {
                 super(itemView);
@@ -409,9 +409,9 @@ public class BTSActivity extends AppCompatActivity {
                 truename = findViewById(R.id.truename);
                 age = findViewById(R.id.age);
                 button = findViewById(R.id.button);
-                image2 = findViewById(R.id.image2);
-                image3 = findViewById(R.id.image3);
-                feture = findViewById(R.id.feture);
+//                image2 = findViewById(R.id.image2);
+//                image3 = findViewById(R.id.image3);
+//                feature = findViewById(R.id.feature);
             }
         }
     }
