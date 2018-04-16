@@ -6,22 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".BTSActivity">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/title"-->
-        <!--android:text="BTS에 대해 알아보아용"-->
-        <!--android:layout_alignTop="@+id/recyclerview" />-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="BTS에 대해 알아보아용" />
 
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp" />
+        android:layout_below="@+id/title" />
 
 
 </RelativeLayout>

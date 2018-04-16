@@ -340,7 +340,7 @@ public class BTSActivity extends AppCompatActivity {
 
     }
 
-    public class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
+    class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
         ArrayList<Bts> arrayList;
         Context context;
         LayoutInflater inflater;
@@ -366,12 +366,12 @@ public class BTSActivity extends AppCompatActivity {
 
             holder.name.setText(arrayList.get(position).getName());
             holder.truename.setText(arrayList.get(position).getTruename());
-            holder.age.setText(arrayList.get(position).getAge());
+            holder.age.setText(arrayList.get(position).getAge()+"");
 
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, Bts2Activity.class);
+                    Intent intent = new Intent(BTSActivity.this, Bts2Activity.class);
 
                     intent.putExtra("image2", arrayList.get(position).getImage2());
                     intent.putExtra("image3", arrayList.get(position).getImage3());
@@ -401,14 +401,14 @@ public class BTSActivity extends AppCompatActivity {
 //            private ImageView image3;
 //            private TextView feature;
 
-            public ViewHolder(View itemView) {
-                super(itemView);
+            public ViewHolder(View View) {
+                super(View);
 
-                image = findViewById(R.id.image);
-                name = findViewById(R.id.name);
-                truename = findViewById(R.id.truename);
-                age = findViewById(R.id.age);
-                button = findViewById(R.id.button);
+                image = View.findViewById(R.id.image);
+                name = View.findViewById(R.id.name);
+                truename = View.findViewById(R.id.truename);
+                age = View.findViewById(R.id.age);
+                button = View.findViewById(R.id.button);
 //                image2 = findViewById(R.id.image2);
 //                image3 = findViewById(R.id.image3);
 //                feature = findViewById(R.id.feature);

@@ -43,11 +43,12 @@ public class Bts2Activity extends AppCompatActivity {
         Glide.with(this).load(bts.getImage2()).centerCrop().into(image2);
         Glide.with(this).load(bts.getImage3()).centerCrop().into(image3);
         feature.setText(bts.getFeature());
+
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(Bts2Activity.this, BTSActivity.class);
-                startActivity(intent);
+                startActivity(intent1);
             }
         });
     }
