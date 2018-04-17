@@ -20,8 +20,31 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/title" />
+
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/recyclerview" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:text="Button1"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Button2"
+        android:layout_height="wrap_content" />
 
 
 </RelativeLayout>

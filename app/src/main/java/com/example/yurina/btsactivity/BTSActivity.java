@@ -1,9 +1,11 @@
 package com.example.yurina.btsactivity;
 
+
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,11 +20,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class BTSActivity extends AppCompatActivity {
+public class BTSActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private ArrayList<Bts> arrayList;
     private Bts bts;
+    Fragment fragment;
 
+    FragmentTransaction fragmentTransaction;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +40,12 @@ public class BTSActivity extends AppCompatActivity {
         Btsmember();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new Myadapter(arrayList, this));
+
+        findViewById(R.id.button1).setOnClickListener(this);
+        findViewById(R.id.button2).setOnClickListener(this);
+
     }
+
 
     public void Btsmember() {
 
@@ -340,6 +350,36 @@ public class BTSActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+
+        fragmentManager = getFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+
+        switch (v.getId()) {
+
+
+            case R.id.button1: {
+                fragment = new TestFragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+            case R.id.button2: {
+                fragment = new Test2Fragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+
+
+        }
+
+
+        fragmentTransaction.commit();
+
+    }
+
     class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
         ArrayList<Bts> arrayList;
         Context context;
@@ -366,7 +406,7 @@ public class BTSActivity extends AppCompatActivity {
 
             holder.name.setText(arrayList.get(position).getName());
             holder.truename.setText(arrayList.get(position).getTruename());
-            holder.age.setText(arrayList.get(position).getAge()+"");
+            holder.age.setText(arrayList.get(position).getAge() + "");
 
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
