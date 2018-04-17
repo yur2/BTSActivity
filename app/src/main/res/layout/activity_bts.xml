@@ -6,45 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".BTSActivity">
 
-    <TextView
-        android:id="@+id/title"
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="BTS에 대해 알아보아용"
+                android:textSize="30dp" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/title" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/scroll"
+    android:id="@+id/framelayout">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <android.support.design.widget.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:text="BTS에 대해 알아보아용" />
+        android:text="뷔"
+        android:id="@+id/v"/>
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@+id/title" />
-
-
-    <FrameLayout
-        android:id="@+id/framelayout"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@+id/recyclerview" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
+    <android.support.design.widget.TabItem
         android:layout_width="wrap_content"
-        android:text="Button1"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="진"
+        android:id="@+id/jin"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="Button2"
-        android:layout_height="wrap_content" />
+    <!--<android.support.design.widget.TabItem-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="지민"-->
+        <!--android:id="@+id/jimin"/>-->
+
+    <!--<android.support.design.widget.TabItem-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="정국"-->
+        <!--android:id="@+id/jungguk"/>-->
+
+    <!--<android.support.design.widget.TabItem-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="랩몬스터"-->
+        <!--android:id="@+id/rapmon"/>-->
+
+    <!--<android.support.design.widget.TabItem-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="슈가"-->
+        <!--android:id="@+id/sugar"/>-->
+
+    <!--<android.support.design.widget.TabItem-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="제이홉"-->
+        <!--android:id="@+id/jhope"/>-->
 
 
-</RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tablayout"
+        android:layout_below="@+id/scroll"
+        android:background="#eedd">
+
+    </android.support.v4.view.ViewPager>
+</FrameLayout>
+
+</RelativeLayout><!--<FrameLayout--><!--android:id="@+id/framelayout"--><!--android:layout_width="match_parent"--><!--android:layout_height="300dp"--><!--android:layout_below="@+id/recyclerview" />-->
+
+    <!--<Button--><!--android:id="@+id/button1"--><!--android:layout_alignParentLeft="true"--><!--android:layout_alignParentBottom="true"--><!--android:layout_width="wrap_content"--><!--android:text="Button1"--><!--android:layout_height="wrap_content" />-->
+
+    <!--<Button--><!--android:id="@+id/button2"--><!--android:layout_alignParentBottom="true"--><!--android:layout_width="wrap_content"--><!--android:layout_alignParentRight="true"--><!--android:text="Button2"--><!--android:layout_height="wrap_content" />-->
+
+
+

@@ -6,8 +6,11 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,6 +28,10 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
     private ArrayList<Bts> arrayList;
     private Bts bts;
     Fragment fragment;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private Myadapter adapter;
+    private PaperAdapter paperAdapter;
 
     FragmentTransaction fragmentTransaction;
     FragmentManager fragmentManager;
@@ -38,11 +45,32 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
         arrayList = new ArrayList<>();
 
         Btsmember();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(new Myadapter(arrayList, this));
 
-        findViewById(R.id.button1).setOnClickListener(this);
-        findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.v).setOnClickListener(this);
+        findViewById(R.id.jin).setOnClickListener(this);
+//        findViewById(R.id.jimin).setOnClickListener(this);
+//        findViewById(R.id.jungguk).setOnClickListener(this);
+//        findViewById(R.id.rapmon).setOnClickListener(this);
+//        findViewById(R.id.sugar).setOnClickListener(this);
+//        findViewById(R.id.jhope).setOnClickListener(this);
+
+        tabLayout = findViewById(R.id.tablayout);
+
+        tabLayout.addTab(tabLayout.newTab().setText("뷔"));
+        tabLayout.addTab(tabLayout.newTab().setText("진"));
+        tabLayout.addTab(tabLayout.newTab().setText("지민"));
+        tabLayout.addTab(tabLayout.newTab().setText("정국"));
+        tabLayout.addTab(tabLayout.newTab().setText("랩몬스터"));
+        tabLayout.addTab(tabLayout.newTab().setText("슈가"));
+        tabLayout.addTab(tabLayout.newTab().setText("제이홉"));
+
+        viewPager = findViewById(R.id.viewpager);
+
+
+        viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
+
 
     }
 
@@ -359,13 +387,13 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()) {
 
 
-            case R.id.button1: {
+            case R.id.v: {
                 fragment = new TestFragment();
                 fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
 
                 break;
             }
-            case R.id.button2: {
+            case R.id.jin: {
                 fragment = new Test2Fragment();
                 fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
 
@@ -381,6 +409,7 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
+
         ArrayList<Bts> arrayList;
         Context context;
         LayoutInflater inflater;
@@ -411,7 +440,7 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(BTSActivity.this, Bts2Activity.class);
+                    Intent intent = new Intent(context, Bts2Activity.class);
 
                     intent.putExtra("image2", arrayList.get(position).getImage2());
                     intent.putExtra("image3", arrayList.get(position).getImage3());
@@ -437,9 +466,7 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
             private TextView truename;
             private TextView age;
             private TextView button;
-//            private ImageView image2;
-//            private ImageView image3;
-//            private TextView feature;
+
 
             public ViewHolder(View View) {
                 super(View);
@@ -449,9 +476,7 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
                 truename = View.findViewById(R.id.truename);
                 age = View.findViewById(R.id.age);
                 button = View.findViewById(R.id.button);
-//                image2 = findViewById(R.id.image2);
-//                image3 = findViewById(R.id.image3);
-//                feature = findViewById(R.id.feature);
+
             }
         }
     }
