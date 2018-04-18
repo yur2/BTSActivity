@@ -30,8 +30,7 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
     Fragment fragment;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private Myadapter adapter;
-    private PaperAdapter paperAdapter;
+    //private PaperAdapter paperAdapter;
 
     FragmentTransaction fragmentTransaction;
     FragmentManager fragmentManager;
@@ -50,29 +49,30 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
 
         findViewById(R.id.v).setOnClickListener(this);
         findViewById(R.id.jin).setOnClickListener(this);
-//        findViewById(R.id.jimin).setOnClickListener(this);
-//        findViewById(R.id.jungguk).setOnClickListener(this);
-//        findViewById(R.id.rapmon).setOnClickListener(this);
-//        findViewById(R.id.sugar).setOnClickListener(this);
-//        findViewById(R.id.jhope).setOnClickListener(this);
+        findViewById(R.id.jimin).setOnClickListener(this);
+        findViewById(R.id.jungguk).setOnClickListener(this);
+        findViewById(R.id.rapmon).setOnClickListener(this);
+        findViewById(R.id.sugar).setOnClickListener(this);
+        findViewById(R.id.jhope).setOnClickListener(this);
 
         tabLayout = findViewById(R.id.tablayout);
 
-        tabLayout.addTab(tabLayout.newTab().setText("뷔"));
-        tabLayout.addTab(tabLayout.newTab().setText("진"));
-        tabLayout.addTab(tabLayout.newTab().setText("지민"));
-        tabLayout.addTab(tabLayout.newTab().setText("정국"));
-        tabLayout.addTab(tabLayout.newTab().setText("랩몬스터"));
-        tabLayout.addTab(tabLayout.newTab().setText("슈가"));
-        tabLayout.addTab(tabLayout.newTab().setText("제이홉"));
+//        tabLayout.addTab(tabLayout.newTab().setText("뷔"));
+//        tabLayout.addTab(tabLayout.newTab().setText("진"));
+//        tabLayout.addTab(tabLayout.newTab().setText("지민"));
+//        tabLayout.addTab(tabLayout.newTab().setText("정국"));
+//        tabLayout.addTab(tabLayout.newTab().setText("랩몬스터"));
+//        tabLayout.addTab(tabLayout.newTab().setText("슈가"));
+//        tabLayout.addTab(tabLayout.newTab().setText("제이홉"));
 
         viewPager = findViewById(R.id.viewpager);
 
 
-        viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
+        //viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
 
 
     }
+
 
 
     public void Btsmember() {
@@ -399,6 +399,37 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
 
                 break;
             }
+            case R.id.jimin: {
+                fragment = new TestFragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+            case R.id.jungguk: {
+                fragment = new Test2Fragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+            case R.id.rapmon: {
+                fragment = new TestFragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+            case R.id.sugar: {
+                fragment = new Test2Fragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+            case R.id.jhope: {
+                fragment = new TestFragment();
+                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+
+                break;
+            }
+
 
 
         }

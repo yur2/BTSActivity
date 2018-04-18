@@ -47,57 +47,55 @@
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_marginTop="110dp">
 
-    <android.support.design.widget.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="뷔"
-        android:id="@+id/v"/>
+        <android.support.design.widget.TabItem
+            android:id="@+id/v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="뷔" />
 
-    <android.support.design.widget.TabItem
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="진"
-        android:id="@+id/jin"/>
+        <android.support.design.widget.TabItem
+            android:id="@+id/jin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="진" />
 
-    <!--<android.support.design.widget.TabItem-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="지민"-->
-        <!--android:id="@+id/jimin"/>-->
+        <android.support.design.widget.TabItem
+            android:id="@+id/jimin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지민" />
 
-    <!--<android.support.design.widget.TabItem-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="정국"-->
-        <!--android:id="@+id/jungguk"/>-->
+        <android.support.design.widget.TabItem
+            android:id="@+id/jungguk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정국" />
 
-    <!--<android.support.design.widget.TabItem-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="랩몬스터"-->
-        <!--android:id="@+id/rapmon"/>-->
+        <android.support.design.widget.TabItem
+            android:id="@+id/rapmon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="랩몬스터" />
 
-    <!--<android.support.design.widget.TabItem-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="슈가"-->
-        <!--android:id="@+id/sugar"/>-->
+        <android.support.design.widget.TabItem
+            android:id="@+id/sugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="슈가" />
 
-    <!--<android.support.design.widget.TabItem-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="제이홉"-->
-        <!--android:id="@+id/jhope"/>-->
-
+        <android.support.design.widget.TabItem
+            android:id="@+id/jhope"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제이홉" />
+    </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tablayout"
-        android:layout_below="@+id/scroll"
+        android:layout_height="110dp"
         android:background="#eedd">
 
     </android.support.v4.view.ViewPager>
