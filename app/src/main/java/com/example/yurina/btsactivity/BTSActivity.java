@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,16 +19,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class BTSActivity extends AppCompatActivity implements View.OnClickListener {
+public class BTSActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Bts> arrayList;
     private Bts bts;
-    Fragment fragment;
+    private Fragment fragment;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     //private PaperAdapter paperAdapter;
@@ -47,32 +49,92 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(new Myadapter(arrayList, this));
 
-        findViewById(R.id.v).setOnClickListener(this);
-        findViewById(R.id.jin).setOnClickListener(this);
-        findViewById(R.id.jimin).setOnClickListener(this);
-        findViewById(R.id.jungguk).setOnClickListener(this);
-        findViewById(R.id.rapmon).setOnClickListener(this);
-        findViewById(R.id.sugar).setOnClickListener(this);
-        findViewById(R.id.jhope).setOnClickListener(this);
 
         tabLayout = findViewById(R.id.tablayout);
 
-//        tabLayout.addTab(tabLayout.newTab().setText("뷔"));
-//        tabLayout.addTab(tabLayout.newTab().setText("진"));
-//        tabLayout.addTab(tabLayout.newTab().setText("지민"));
-//        tabLayout.addTab(tabLayout.newTab().setText("정국"));
-//        tabLayout.addTab(tabLayout.newTab().setText("랩몬스터"));
-//        tabLayout.addTab(tabLayout.newTab().setText("슈가"));
-//        tabLayout.addTab(tabLayout.newTab().setText("제이홉"));
+        tabLayout.addTab(tabLayout.newTab().setText("뷔"), 0);
+        tabLayout.addTab(tabLayout.newTab().setText("진"), 1);
+        tabLayout.addTab(tabLayout.newTab().setText("지민"), 2);
+        tabLayout.addTab(tabLayout.newTab().setText("정국"), 3);
+        tabLayout.addTab(tabLayout.newTab().setText("랩몬스터"), 4);
+        tabLayout.addTab(tabLayout.newTab().setText("슈가"), 5);
+        tabLayout.addTab(tabLayout.newTab().setText("제이홉"), 6);
 
-        viewPager = findViewById(R.id.viewpager);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+
+                switch (tab.getPosition()) {
+
+                    case 0: {
+                        fragment = new Test2Fragment();
+                        fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+                        break;
+//                        Toast.makeText(getApplicationContext(), tab.getPosition()+"", Toast.LENGTH_SHORT).show();
+
+                    }
+                    case 1: {
+
+                        fragment = new TestFragment();
+                        fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+                        break;
+
+                    }
+                    case 2: {
+//                        fragment = new Test3Fragment();
+//                        fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+//                        break;
+
+                    }
+                    case 3: {
+//                        //fragment = new Test3Fragment()Fragment();
+//                        fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
+//                        break;
+
+                    }
+                    case 4: {
+
+                    }
+                    case 5: {
+
+
+                    }
+                    case 6: {
+
+
+                    }
+
+
+                }
+
+                fragmentTransaction.commit();
+
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+//        viewPager = findViewById(R.id.viewpager);
 
 
         //viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
 
 
     }
-
 
 
     public void Btsmember() {
@@ -378,66 +440,6 @@ public class BTSActivity extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    @Override
-    public void onClick(View v) {
-
-        fragmentManager = getFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-
-        switch (v.getId()) {
-
-
-            case R.id.v: {
-                fragment = new TestFragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.jin: {
-                fragment = new Test2Fragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.jimin: {
-                fragment = new TestFragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.jungguk: {
-                fragment = new Test2Fragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.rapmon: {
-                fragment = new TestFragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.sugar: {
-                fragment = new Test2Fragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-            case R.id.jhope: {
-                fragment = new TestFragment();
-                fragmentTransaction.addToBackStack(null).replace(R.id.framelayout, fragment);
-
-                break;
-            }
-
-
-
-        }
-
-
-        fragmentTransaction.commit();
-
-    }
 
     class Myadapter extends RecyclerView.Adapter<Myadapter.ViewHolder> {
 

@@ -5,13 +5,50 @@
     android:layout_height="match_parent"
     android:background="#ee9"
     tools:context=".Test2Fragment">
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerview2"
-        android:layout_margin="5dp">
 
-    </android.support.v7.widget.RecyclerView>
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/recyclerview2"-->
+    <!--android:layout_margin="5dp">-->
+
+    <!--</android.support.v7.widget.RecyclerView>-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/vpic"
+                android:src="@drawable/vpic" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/vpic"
+                android:text=" \n*본명: 김태형 / Kim Tae Hyung / 金 泰 亨 (성 김, 클 태, 형통할 형)\n
+ *활동명: 뷔 / V\n
+ *생년월일: 1995년 12월 30일\n
+ *탄생화: 납매 / 꽃말: 자애\n
+ *탄생석: 터키석 / 의미: 성공, 승리\n
+ *탄생목: 너도밤나무 / 의미: 창조\n
+ *별자리: 염소자리\n
+ *띠: 돼지띠\n
+ *키: 179cm\n
+ *몸무게: 62kg\n
+ *혈액형: AB형\n"
+                android:textSize="20dp" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
 
 
 </FrameLayout>
