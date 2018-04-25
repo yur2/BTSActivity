@@ -16,6 +16,10 @@ class PaperAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         return null;
+//        switch (position) {
+//            case 0:
+//                return null;
+//        }
     }
 
 

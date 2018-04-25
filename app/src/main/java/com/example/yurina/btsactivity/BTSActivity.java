@@ -128,10 +128,10 @@ public class BTSActivity extends AppCompatActivity {
         });
 
 
-//        viewPager = findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
 
 
-        //viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
+        viewPager.setAdapter(new PaperAdapter(getSupportFragmentManager()));
 
 
     }
